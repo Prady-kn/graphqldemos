@@ -2,3 +2,13 @@ POST http://localhost:9000
 Content-Type: application/json
 
 {"query":"query {\n  greeting\n}","variables":{}}
+
+
+####
+#ref:https://www.apollographql.com/docs/graphos/schema-design/federated-schemas/reference/query-plans
+POST http://localhost:9002/graphql
+Content-Type: application/json
+Apollo-Query-Plan-Experimental: true
+Apollo-Query-Plan-Experimental-Format: prettified
+
+{"query":"{jobs(limit:2 offset:2){items{id title date company{__typename id name}}} company(id:\"FjcJCHJALA4i\"){id name}}","variables":{}}
