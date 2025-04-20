@@ -31,7 +31,7 @@ Its the company the job is posted from
   description: String
 }
 
-type Company @key(fields:"id",  ) {
+type Company @key(fields:"id"  ) {
   id: ID! 
  # jobs: [Job!]!
 }

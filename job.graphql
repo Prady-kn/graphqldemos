@@ -1,0 +1,50 @@
+"""
+Indicates exactly one field must be supplied and this field must not be `null`.
+"""
+directive @oneOf on INPUT_OBJECT
+
+directive @key(fields: String!) on OBJECT | INTERFACE
+
+directive @extends on OBJECT | INTERFACE
+
+directive @external on OBJECT | FIELD_DEFINITION
+
+directive @requires(fields: String!) on FIELD_DEFINITION
+
+directive @provides(fields: String!) on FIELD_DEFINITION
+
+type Query {
+  _entities(representations: [_Any!]!): [_Entity]!
+  _service: _Service!
+  jobs(limit: Int, offset: Int): JobSubList
+}
+
+union _Entity = Company
+
+scalar _Any
+
+type _Service {
+  """
+  The sdl representing the federated service capabilities. Includes federation directives, removes federation types, and includes rest of full schema after schema directives have been applied
+  """
+  sdl: String
+}
+
+type JobSubList {
+  items: [Job!]!
+  totalCount: Int!
+}
+
+type Job @key(fields:"id") {
+  id: ID!
+  date: String!
+  title: String!
+
+  """Its the company the job is posted from"""
+  company: Company!
+  description: String
+}
+
+type Company {
+  id: ID!
+}
