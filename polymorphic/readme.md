@@ -110,3 +110,25 @@ query GetMembers {
 
 
 ```
+
+# 3. Use JSON fragement
+
+Need to use below package
+
+```
+import { GraphQLJSON } from 'graphql-type-json';
+```
+
+## Query
+
+```
+
+query Parameters {
+  parameters {
+    type
+    name
+    value
+  }
+}
+
+```
