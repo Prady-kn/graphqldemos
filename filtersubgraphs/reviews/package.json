@@ -1,0 +1,17 @@
+{
+  "name": "reviews",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.12.1",
+    "@apollo/subgraph": "^2.10.2",
+    "graphql-tag": "^2.12.6"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "routersrv",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@apollo/gateway": "^2.10.2",
+    "@apollo/server": "^4.12.1"
+  }
+}
